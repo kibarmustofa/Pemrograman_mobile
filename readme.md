@@ -10,7 +10,7 @@ NIM   : 2341720034
 
 1. tampilan screenshot 
 #
-![tugas soal 1](\img\tugasPraktikum2.png)
+![tugas soal 1](img/tugasPraktikum2.png)
 
 2. Soal 2: Pentingnya Memahami Dart Sebelum Flutter
 - Sangat penting untuk memahami bahasa pemrograman Dart sebelum menggunakan framework Flutter karena Dart adalah fondasi tempat Flutter dibangun. 
@@ -45,6 +45,6 @@ Eksekusi kode Dart dapat beroperasi dalam dua mode — kompilasi Just-In-Time (J
 
 - saya sudah memberikan penjelasan pada comment di contoh eksekusi kode
 #
-![tugas soal 4 (null)](\img\null.png)
+![tugas soal 4 (null)](img/null.png)
 #
-![tugas soal 4 (late)](\img\late.png)
+![tugas soal 4 (late)](img/late.png)
