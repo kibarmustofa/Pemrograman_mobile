@@ -7,18 +7,18 @@ void main(){
   // print(list2.length);
 
   //langkah 3
-  // var list1 = [1, 2, null];
-  // print(list1);
+  var list1 = [1, 2, null];
+  print(list1);
 
-  // var list3 = [0, ...?list1];
-  // print('Panjang list3: ${list3.length}');
-  // print('Isi list3: $list3');
+  var list3 = [0, ...?list1];
+  print('Panjang list3: ${list3.length}');
+  print('Isi list3: $list3');
 
-  // // Menambahkan NIM menggunakan Spread Operator
-  // var nim = [2, 0, 2, 3, 1, 0, 3, 7, 0];
-  // var combinedList = [...list3, ...nim];
+  // Menambahkan NIM menggunakan Spread Operator
+  var nim = [2, 3, 4, 1, 7, 2, 0, 0, 3, 4];
+  var combinedList = [...list3, ...nim];
 
-  // print('Combined List (list3 + nim): $combinedList');
+  print('Combined List (list3 + nim): $combinedList');
 
 
   //langkah 4
@@ -47,9 +47,9 @@ void main(){
 
   //langkah 6
  
-  var listOfInts = [1, 2, 3];
-  var listOfStrings = ['#0', for (var i in listOfInts) '#$i'];
-  assert(listOfStrings[1] == '#1');
-  print(listOfStrings);
+  // var listOfInts = [1, 2, 3];
+  // var listOfStrings = ['#0', for (var i in listOfInts) '#$i'];
+  // assert(listOfStrings[1] == '#1');
+  // print(listOfStrings);
 
 }
