@@ -274,6 +274,9 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 ```
+
+![pratikum 5](img/P5-2.png)
+
 ## Langkah 4: Dialog Widget
 Dialog widget pada flutter memiliki dua jenis dialog yaitu AlertDialog dan SimpleDialog.
 
@@ -336,7 +339,9 @@ showAlertDialog(BuildContext context) {
   );
 }
 ```
-Langkah 5: Input dan Selection Widget
+![pratikum 5](img/P5-3.png)
+
+## Langkah 5: Input dan Selection Widget
 Flutter menyediakan widget yang dapat menerima input dari pengguna aplikasi yaitu antara lain Checkbox, Date and Time Pickers, Radio Button, Slider, Switch, TextField.
 
 Contoh penggunaan TextField widget adalah sebagai berikut:
@@ -361,6 +366,8 @@ class MyApp extends StatelessWidget {
   }
 }
 ```
+![pratikum 5](img/P5-4.png)
+
 ## Langkah 6: Date and Time Pickers
 Date and Time Pickers termasuk pada kategori input dan selection widget, berikut adalah contoh penggunaan Date and Time Pickers.
 ```
@@ -439,7 +446,7 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 hasil dari langkah 1:
-![pratikum 5](img/P-5.png)
+![pratikum 5](img/P5-5.png)
 
 ## Tugas praktikum 
 
@@ -448,3 +455,4 @@ hasil dari langkah 1:
 3. Pada praktikum 5 mulai dari Langkah 3 sampai 6, buatlah file widget tersendiri di folder basic_widgets, kemudian pada file main.dart cukup melakukan import widget sesuai masing-masing langkah tersebut!
 4. Selesaikan Codelabs: Your first Flutter app, lalu buatlah laporan praktikumnya dan push ke repository GitHub Anda!
 README.md berisi: capture hasil akhir tiap praktikum (side-by-side, bisa juga berupa file GIF agar terlihat proses perubahan ketika ada aksi dari pengguna) dengan menampilkan NIM dan Nama Anda sebagai ciri pekerjaan Anda.
+
