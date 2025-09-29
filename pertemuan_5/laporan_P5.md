@@ -477,7 +477,7 @@ README.md berisi: capture hasil akhir tiap praktikum (side-by-side, bisa juga be
 
 
 ## Langkah 7
-![Langkah 7](7.png)
+![Langkah 7](img/7.png)
 ![Langkah 7-1](img/7-1.png)
 ![Langkah 7-2](img/7-2.png)
 
