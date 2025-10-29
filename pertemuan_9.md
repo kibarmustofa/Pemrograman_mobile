@@ -1,6 +1,6 @@
 # praktikum 1 menerapkan fitur kamera pada flutter 
 ![praktikum 1](img/kamera1.jpeg)
-![praktikum 1](img/kamerahasil.png)
+![praktikum 1](img/kamerahasil.jpeg)
 
 # praktikum 2 menerapkan filter carousell
 ![praktikum 2](img/filtercoursell.gif)
