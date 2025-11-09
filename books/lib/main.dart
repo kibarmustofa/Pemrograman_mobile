@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        
       ),
       home: const FuturePage(),
     );
@@ -32,6 +33,31 @@ class FuturePage extends StatefulWidget {
 class _FuturePageState extends State<FuturePage> {
   String result = '';
 
+  Future<int> returnOneAsync() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return 1;
+  }
+
+  Future<int> returnTwoAsync() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return 2;
+  }
+
+  Future<int> returnThreeAsync() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return 3;
+  }
+
+  Future count() async {
+    int total = 0;
+    total = await returnOneAsync();
+    total += await returnTwoAsync();
+    total += await returnThreeAsync();
+    setState(() {
+      result = total.toString();
+    });
+  }
+
   Future<http.Response> getData() async { 
     const authority = 'www.googleapis.com';
     const path = '/books/v1/volumes/GErEDwAAQBAJ';
@@ -44,6 +70,8 @@ class _FuturePageState extends State<FuturePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Back from the Future'),
+        backgroundColor: Colors.blue, // warna header
+        foregroundColor: Colors.white, // warna teks ikon
       ),
       body: Center(
         child: Column(children: [
@@ -51,14 +79,15 @@ class _FuturePageState extends State<FuturePage> {
           ElevatedButton(
             child: const Text('GO!'),
             onPressed: () {
-              setState(() {}); 
-              getData().then((value) {
-                result = value.body.toString().substring(0, 450); 
-                setState(() {}); 
-              }).catchError((_) {
-                result = 'An error occurred';
-                setState(() {});
-              });
+              // setState(() {});                                      
+              // getData().then((value) {
+              //   result = value.body.toString().substring(0, 450);  //dari praktikum sebelumnya
+              //   setState(() {}); 
+              // }).catchError((_) {
+              //   result = 'An error occurred';
+              //   setState(() {});
+              // });
+              count();
             },
           ),
           const Spacer(),
