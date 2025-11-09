@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:async/async.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,6 +33,19 @@ class FuturePage extends StatefulWidget {
 
 class _FuturePageState extends State<FuturePage> {
   String result = '';
+
+  late Completer<int> completer; // ✅ variabel baru
+
+  Future getNumber() {
+    completer = Completer<int>();
+    calculate();
+    return completer.future;
+  }
+
+  Future calculate() async {
+    await Future.delayed(const Duration(seconds: 5));
+    completer.complete(42);
+  }
 
   Future<int> returnOneAsync() async {
     await Future.delayed(const Duration(seconds: 3));
@@ -81,13 +95,20 @@ class _FuturePageState extends State<FuturePage> {
             onPressed: () {
               // setState(() {});                                      
               // getData().then((value) {
-              //   result = value.body.toString().substring(0, 450);  //dari praktikum sebelumnya
+              //   result = value.body.toString().substring(0, 450);  //dari praktikum 1
               //   setState(() {}); 
               // }).catchError((_) {
               //   result = 'An error occurred';
               //   setState(() {});
               // });
-              count();
+
+              //count();                                             //langkah praktikum 2
+
+              getNumber().then((value) {
+                setState(() {
+                  result = value.toString();
+                });
+              });
             },
           ),
           const Spacer(),
