@@ -42,9 +42,19 @@ class _FuturePageState extends State<FuturePage> {
     return completer.future;
   }
 
+  // Future calculate() async {
+  //   await Future.delayed(const Duration(seconds: 5));
+  //   completer.complete(42);
+  // }
+
   Future calculate() async {
-    await Future.delayed(const Duration(seconds: 5));
-    completer.complete(42);
+    try {
+      await Future.delayed(const Duration(seconds: 5));
+      completer.complete(42);
+      // throw Exception(); // Jika ini di-uncomment, akan memicu catch
+    } catch (_) {
+      completer.completeError('Terjadi error'); 
+    }
   }
 
   Future<int> returnOneAsync() async {
@@ -108,6 +118,9 @@ class _FuturePageState extends State<FuturePage> {
                 setState(() {
                   result = value.toString();
                 });
+                }).catchError((e) {
+                // Perhatikan: setState() tidak ada di sini
+                result = 'An error occurred'; 
               });
             },
           ),
