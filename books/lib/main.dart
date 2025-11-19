@@ -57,6 +57,36 @@ class _FuturePageState extends State<FuturePage> {
     }
   }
 
+  void returnFG() {
+    FutureGroup<int> futureGroup = FutureGroup<int>();
+    futureGroup.add(returnOneAsync());
+    futureGroup.add(returnTwoAsync());
+    futureGroup.add(returnThreeAsync());
+    futureGroup.close();
+    futureGroup.future.then((List<int> value) {
+      int total = 0;
+      for (var element in value) {
+        total += element;
+      }
+      setState(() {
+        result = total.toString();
+      });
+    });
+  }
+    void returnFW() async {
+    final futures = Future.wait<int>([
+      returnOneAsync(),
+      returnTwoAsync(),
+      returnThreeAsync(),
+    ]);
+
+    List<int> hasil = await futures;
+
+    setState(() {
+      resu
+      lt = hasil.toString();   // tampilkan data tanpa dijumlah
+    });
+  }
   Future<int> returnOneAsync() async {
     await Future.delayed(const Duration(seconds: 3));
     return 1;
@@ -114,14 +144,16 @@ class _FuturePageState extends State<FuturePage> {
 
               //count();                                             //langkah praktikum 2
 
-              getNumber().then((value) {
-                setState(() {
-                  result = value.toString();
-                });
-                }).catchError((e) {
-                // Perhatikan: setState() tidak ada di sini
-                result = 'An error occurred'; 
-              });
+              // getNumber().then((value) {
+              //   setState(() {
+              //     result = value.toString();
+              //   });
+              //   }).catchError((e) {
+              //   // Perhatikan: setState() tidak ada di sini
+              //   result = 'An error occurred'; 
+              // });
+
+              returnFG();
             },
           ),
           const Spacer(),
