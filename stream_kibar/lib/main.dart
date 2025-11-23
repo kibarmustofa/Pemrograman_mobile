@@ -26,7 +26,6 @@ class StreamHomePage extends StatefulWidget {
   State<StreamHomePage> createState() => _StreamHomePageState();
 }
 
-// --- Bagian ini ditambahkan agar kode bisa jalan (karena terpotong di gambar) ---
 class _StreamHomePageState extends State<StreamHomePage> {
   @override
   Widget build(BuildContext context) {
