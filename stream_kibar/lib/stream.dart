@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class colorStream {
+class ColorStream {
   Stream<Color> getColors() async* {
     yield* Stream.periodic(
       const Duration(seconds: 1), (int t) {
